@@ -233,7 +233,6 @@ hr {
     color: white;
     border: none;
     border-radius: 50%;
-    /* Botones redondos */
     width: 45px;
     height: 45px;
     font-size: 1.2em;
@@ -248,10 +247,9 @@ hr {
 
 .btn-musica:active {
     transform: scale(0.95);
-    /* Se "presiona" visualmente */
 }
 
-/* El botón de pausa es más grande (es el principal) */
+/* El botón de pausa es más grande */
 .btn-play {
     width: 55px;
     height: 55px;
@@ -295,21 +293,4 @@ footer {
     margin-top: 50px;
     color: #a8d8a8;
     font-size: 0.85em;
-}
-
-/* ---- Responsive: en pantallas pequeñas, 1 columna ---- */
-@media (max-width: 700px) {
-    .galeria {
-        column-count: 1;
-    }
-
-    header h1 {
-        font-size: 1.2em;
-    }
-}
-
-@media (min-width: 701px) and (max-width: 1000px) {
-    .galeria {
-        column-count: 2;
-    }
 }
