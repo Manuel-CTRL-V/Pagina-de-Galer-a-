@@ -8,8 +8,10 @@
 
 /* ---- Estilos generales del body ---- */
 body {
-    background-color: #ffffff;   /* Fondo blanco */
-    color: #222222;              /* Texto oscuro para que se lea bien */
+    background-color: #ffffff;
+    /* Fondo blanco */
+    color: #222222;
+    /* Texto oscuro para que se lea bien */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -17,17 +19,20 @@ body {
 
 /* ---- Encabezado principal ---- */
 header {
-    background-color: #4a7c3f;   /* Verde Minecraft */
+    background-color: #4a7c3f;
+    /* Verde Minecraft */
     text-align: center;
     padding: 30px 20px;
     border-bottom: 4px solid #2d5a27;
 }
 
 header h1 {
-    font-family: 'Press Start 2P', cursive;  /* Fuente pixel art */
+    font-family: 'Press Start 2P', cursive;
+    /* Fuente pixel art */
     font-size: 2em;
     color: #ffffff;
-    text-shadow: 3px 3px 0px #2d5a27;        /* Sombra estilo pixel */
+    text-shadow: 3px 3px 0px #2d5a27;
+    /* Sombra estilo pixel */
     margin: 0 0 10px 0;
 }
 
@@ -50,7 +55,8 @@ nav a {
     margin: 0 15px;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.6em;
-    transition: color 0.3s;   /* Pequeña animación al pasar el mouse */
+    transition: color 0.3s;
+    /* Pequeña animación al pasar el mouse */
 }
 
 nav a:hover {
@@ -68,21 +74,24 @@ main {
 h2 {
     font-family: 'Press Start 2P', cursive;
     font-size: 1em;
-    color: #3a6b30;   /* Verde más oscuro, visible sobre blanco */
+    color: #3a6b30;
+    /* Verde más oscuro, visible sobre blanco */
     border-left: 5px solid #4a7c3f;
     padding-left: 12px;
     margin-top: 40px;
 }
 
 h3 {
-    color: #3a6b30;   /* Verde oscuro */
+    color: #3a6b30;
+    /* Verde oscuro */
     font-size: 1em;
     margin-bottom: 5px;
 }
 
 /* ---- Sección de información / texto ---- */
 .seccion-info {
-    background-color: #f4f9f2;   /* Verde muy claro para destacar la sección */
+    background-color: #f4f9f2;
+    /* Verde muy claro para destacar la sección */
     border: 2px solid #4a7c3f;
     border-radius: 8px;
     padding: 20px 25px;
@@ -105,8 +114,10 @@ blockquote {
 }
 
 code {
-    background-color: #e8f5e3;   /* Fondo verde muy claro */
-    color: #2d7a2d;              /* Verde oscuro legible sobre fondo claro */
+    background-color: #e8f5e3;
+    /* Fondo verde muy claro */
+    color: #2d7a2d;
+    /* Verde oscuro legible sobre fondo claro */
     padding: 2px 6px;
     border-radius: 4px;
     font-family: monospace;
@@ -119,26 +130,31 @@ hr {
     margin: 20px 0;
 }
 
-/* ---- Galería estilo Pinterest ---- */
+/* Galería estilo Pinterest */
 .galeria {
-    column-count: 3;          /* 3 columnas estilo Pinterest */
+    column-count: 3;
     column-gap: 12px;
     margin-top: 20px;
 }
 
 /* Cada tarjeta de imagen */
 .galeria .tarjeta {
-    break-inside: avoid;      /* Que la tarjeta no se parta entre columnas */
+    break-inside: avoid;
+    /* Que la tarjeta no se parta entre columnas */
     margin-bottom: 12px;
-    background-color: #f0f0f0;   /* Gris claro */
+    background-color: #f0f0f0;
+    /* Gris claro */
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid #c0c0c0;   /* Borde gris suave */
-    transition: transform 0.3s, box-shadow 0.3s;  /* Animación al hover */
+    border: 2px solid #c0c0c0;
+    /* Borde gris suave */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Animación al hover */
 }
 
 .galeria .tarjeta:hover {
-    transform: scale(1.03);   /* Se agranda un poco al pasar el mouse */
+    transform: scale(1.03);
+    /* Se agranda un poco al pasar el mouse */
     box-shadow: 0 6px 20px rgba(74, 124, 63, 0.5);
 }
 
@@ -163,28 +179,33 @@ hr {
     display: flex;
     gap: 16px;
     justify-content: center;
-    flex-wrap: wrap;   /* Si la pantalla es pequeña, se apilan */
+    flex-wrap: wrap;
+    /* Si la pantalla es pequeña, se apilan */
     margin-top: 15px;
 }
 
 .video-item {
-    background-color: #f4f9f2;   /* Verde muy claro */
+    background-color: #f4f9f2;
+    /* Verde muy claro */
     border: 2px solid #4a7c3f;
     border-radius: 8px;
     padding: 10px;
-    width: 360px;        /* Tamaño similar al de la imagen más grande */
+    width: 360px;
+    /* Tamaño similar al de la imagen más grande */
     flex-shrink: 0;
 }
 
 .video-item video {
-    width: 100%;         /* El video llena su tarjeta */
+    width: 100%;
+    /* El video llena su tarjeta */
     border-radius: 6px;
     display: block;
 }
 
-/* ---- Reproductor de música ---- */
+/*  Reproductor de música */
 .seccion-musica {
-    background-color: #f4f9f2;   /* Verde muy claro */
+    background-color: #f4f9f2;
+    /* Verde muy claro */
     border: 2px solid #4a7c3f;
     border-radius: 10px;
     padding: 20px;
@@ -198,7 +219,8 @@ hr {
 
 .info-cancion p {
     font-size: 0.9em;
-    color: #3a6b30;   /* Verde oscuro visible sobre fondo claro */
+    color: #3a6b30;
+    /* Verde oscuro visible sobre fondo claro */
     margin: 4px 0;
 }
 
@@ -215,7 +237,8 @@ hr {
     background-color: #4a7c3f;
     color: white;
     border: none;
-    border-radius: 50%;      /* Botones redondos */
+    border-radius: 50%;
+    /* Botones redondos */
     width: 45px;
     height: 45px;
     font-size: 1.2em;
@@ -229,7 +252,8 @@ hr {
 }
 
 .btn-musica:active {
-    transform: scale(0.95);  /* Se "presiona" visualmente */
+    transform: scale(0.95);
+    /* Se "presiona" visualmente */
 }
 
 /* El botón de pausa es más grande (es el principal) */
@@ -246,7 +270,7 @@ audio {
     border-radius: 6px;
 }
 
-/* ---- Sección del Canvas ---- */
+/* Sección del Canvas */
 .seccion-canvas {
     margin-top: 30px;
     text-align: center;
@@ -255,15 +279,16 @@ audio {
 #miCanvas {
     border: 3px solid #4a7c3f;
     border-radius: 8px;
-    cursor: pointer;          /* Cursor de manita para indicar que se puede hacer clic */
+    cursor: pointer;
+    /* Cursor de manita para indicar que se puede hacer clic */
     display: block;
     margin: 0 auto;
-    background-color: #87ceeb; /* Cielo azul de fondo por si el JS tarda */
 }
 
 .instruccion-canvas {
     font-size: 0.85em;
-    color: #3a6b30;   /* Verde oscuro */
+    color: #3a6b30;
+    /* Verde oscuro */
     margin-top: 8px;
 }
 

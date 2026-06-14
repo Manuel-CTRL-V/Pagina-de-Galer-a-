@@ -1,10 +1,4 @@
-// =========================================
-// script.js - Lógica del Canvas y del Audio
-// Galería Multimedia de Minecraft
-// =========================================
-
-
-// ---- SECCIÓN 1: LÓGICA DEL REPRODUCTOR DE AUDIO ----
+// REPRODUCTOR DE AUDIO
 
 // Obtenemos el elemento de audio del HTML
 var audio = document.getElementById("audioMinecraft");
@@ -17,14 +11,12 @@ function togglePlay() {
     var boton = document.getElementById("btnPlay");
 
     if (reproduciendo) {
-        // Si está reproduciendo, lo pausamos
         audio.pause();
-        boton.textContent = "▶";   // Cambiamos el ícono a "play"
+        boton.textContent = "▶";
         reproduciendo = false;
     } else {
-        // Si está pausado, lo reproducimos
         audio.play();
-        boton.textContent = "⏸";   // Cambiamos el ícono a "pausa"
+        boton.textContent = "⏸";
         reproduciendo = true;
     }
 }
@@ -36,42 +28,58 @@ audio.addEventListener("ended", function () {
 });
 
 
-// ---- SECCIÓN 2: CANVAS - ESCENA DE MINECRAFT ----
+// CANVAS
 
 // Obtenemos el canvas y su contexto 2D para poder dibujar
 var canvas = document.getElementById("miCanvas");
 var ctx = canvas.getContext("2d");
 
-// --- Variables de la animación ---
+// Variables de la animación
 
-// Posición del sol (empieza a la izquierda y se mueve a la derecha)
-var solX = 50;
-var solY = 60;
-var velocidadSol = 0.4;   // Qué tan rápido se mueve el sol
+// Posición fija del sol en el canvas
+var solX = 30;
+var solY = 20;
 
-// Variable para controlar la explosión del Creeper
 var explotando = false;
 var frameExplosion = 0;    // Contador de frames de la explosión
 
 
-// --- Posición del Creeper en el canvas ---
-// El Creeper está hecho de cuadraditos (pixel art)
+// Tamaño de cada pixel del sol (puedes cambiarlo para hacerlo más grande o más pequeño)
+var tamPixelSol = 6;
+
+// --- Mapa del Sol (pixel art) ---
+// 0 = transparente (no se dibuja)
+// 1 = amarillo claro
+// 2 = amarillo oscuro
+// 3 = naranja
+var solPixeles = [
+    [0, 0, 1, 1, 1, 1, 0, 0],
+    [0, 1, 2, 2, 2, 2, 1, 0],
+    [1, 2, 2, 1, 1, 2, 2, 1],
+    [1, 2, 1, 1, 1, 1, 2, 1],
+    [1, 2, 1, 1, 1, 1, 2, 1],
+    [1, 2, 2, 1, 1, 2, 2, 1],
+    [0, 1, 2, 2, 2, 2, 1, 0],
+    [0, 0, 1, 1, 1, 1, 0, 0],
+];
+
+
 var creeperX = 190;   // Posición X donde empieza a dibujarse
 var creeperY = 120;   // Posición Y donde empieza a dibujarse
-var tamPixel = 12;    // Tamaño de cada "pixel" del Creeper
+var tamPixel = 12;    // Tamaño de cada pixel del Creeper
 
 
 // --- Mapa del Creeper (pixel art) ---
-// 0 = transparente, 1 = verde oscuro (cuerpo), 2 = negro (ojos/boca)
+// 1 = verde oscuro (cuerpo), 2 = negro (ojos/boca)
 const creeperPixeles = [
-    [1, 1, 1, 1, 1, 1, 1, 1],  // fila 0: todo verde
-    [1, 1, 1, 1, 1, 1, 1, 1],  // fila 1: ojos
-    [1, 2, 2, 1, 1, 2, 2, 1],  // fila 2: ojos
-    [1, 2, 2, 1, 1, 2, 2, 1],  // fila 3: verde
-    [1, 1, 1, 2, 2, 1, 1, 1],  // fila 4: boca esquinas
-    [1, 1, 2, 2, 2, 2, 1, 1],  // fila 5: boca centro
-    [1, 1, 2, 2, 2, 2, 1, 1],  // fila 6: boca baja
-    [1, 1, 2, 1, 1, 2, 1, 1],  // fila 7: todo verde
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 2, 2, 1, 1, 2, 2, 1],
+    [1, 2, 2, 1, 1, 2, 2, 1],
+    [1, 1, 1, 2, 2, 1, 1, 1],
+    [1, 1, 2, 2, 2, 2, 1, 1],
+    [1, 1, 2, 2, 2, 2, 1, 1],
+    [1, 1, 2, 1, 1, 2, 1, 1],
 ];
 
 
@@ -83,17 +91,32 @@ function dibujarCielo() {
 }
 
 
-// --- Función: dibujar el sol ---
+// --- Función: dibujar el sol con pixel art ---
 function dibujarSol() {
-    // Dibujamos un círculo amarillo
-    ctx.beginPath();
-    ctx.arc(solX, solY, 30, 0, Math.PI * 2);   // x, y, radio, ángulo inicio, fin
-    ctx.fillStyle = "#FFD700";    // Amarillo dorado
-    ctx.fill();
-    ctx.strokeStyle = "#FFA500";  // Borde naranja
-    ctx.lineWidth = 3;
-    ctx.stroke();
-    ctx.closePath();
+    // Recorremos cada fila del mapa del sol
+    for (var fila = 0; fila < solPixeles.length; fila++) {
+        for (var col = 0; col < solPixeles[fila].length; col++) {
+            var valor = solPixeles[fila][col];
+
+            // Elegimos el color según el número del mapa
+            if (valor === 1) {
+                ctx.fillStyle = "#FFE566";   // Amarillo claro
+            } else if (valor === 2) {
+                ctx.fillStyle = "#FFD700";   // Amarillo dorado
+            } else if (valor === 3) {
+                ctx.fillStyle = "#FFA500";   // Naranja
+            } else {
+                continue;   // 0 = transparente, saltamos este pixel
+            }
+
+            ctx.fillRect(
+                solX + col * tamPixelSol,    // Posición X del pixel
+                solY + fila * tamPixelSol,   // Posición Y del pixel
+                tamPixelSol,                 // Ancho del pixel
+                tamPixelSol                  // Alto del pixel
+            );
+        }
+    }
 }
 
 
@@ -186,15 +209,6 @@ function dibujarExplosion() {
 }
 
 
-// --- Función: dibujar el texto de instrucción ---
-function dibujarTexto() {
-    ctx.font = "bold 13px Arial";
-    ctx.fillStyle = "#2d5a27";
-    ctx.textAlign = "center";
-    ctx.fillText("¡Haz clic en el Creeper!", canvas.width / 2, canvas.height - 70);
-    ctx.textAlign = "left";  // Reseteamos la alineación
-}
-
 
 // --- Función principal: dibuja todo el frame ---
 function dibujarFrame() {
@@ -204,11 +218,7 @@ function dibujarFrame() {
     // 2. Dibujamos el cielo de fondo
     dibujarCielo();
 
-    // 3. Movemos y dibujamos el sol
-    solX += velocidadSol;
-    if (solX > canvas.width + 40) {
-        solX = -40;   // Si el sol sale por la derecha, reaparece por la izquierda
-    }
+    // 3. Dibujamos el sol
     dibujarSol();
 
     // 4. Dibujamos el suelo
@@ -230,10 +240,7 @@ function dibujarFrame() {
         dibujarCreeper();
     }
 
-    // 6. Dibujamos el texto de instrucción
-    dibujarTexto();
-
-    // 7. Pedimos el siguiente frame (bucle de animación)
+    // 6. Pedimos el siguiente frame (bucle de animación)
     requestAnimationFrame(dibujarFrame);
 }
 
