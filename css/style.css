@@ -1,0 +1,295 @@
+/* =========================================
+   style.css - Estilos de la Galería Minecraft
+   Autor: Estudiante
+   ========================================= */
+
+/* Importamos una fuente estilo pixel art de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Segoe+UI:wght@400;700&display=swap');
+
+/* ---- Estilos generales del body ---- */
+body {
+    background-color: #ffffff;   /* Fondo blanco */
+    color: #222222;              /* Texto oscuro para que se lea bien */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Encabezado principal ---- */
+header {
+    background-color: #4a7c3f;   /* Verde Minecraft */
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 4px solid #2d5a27;
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;  /* Fuente pixel art */
+    font-size: 2em;
+    color: #ffffff;
+    text-shadow: 3px 3px 0px #2d5a27;        /* Sombra estilo pixel */
+    margin: 0 0 10px 0;
+}
+
+header p {
+    font-size: 1em;
+    color: #d4f1c4;
+    margin: 5px 0;
+}
+
+/* ---- Navegación ---- */
+nav {
+    background-color: #2d5a27;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: #a8d8a8;
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6em;
+    transition: color 0.3s;   /* Pequeña animación al pasar el mouse */
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* ---- Contenedor principal ---- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ---- Títulos de sección ---- */
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    color: #3a6b30;   /* Verde más oscuro, visible sobre blanco */
+    border-left: 5px solid #4a7c3f;
+    padding-left: 12px;
+    margin-top: 40px;
+}
+
+h3 {
+    color: #3a6b30;   /* Verde oscuro */
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+/* ---- Sección de información / texto ---- */
+.seccion-info {
+    background-color: #f4f9f2;   /* Verde muy claro para destacar la sección */
+    border: 2px solid #4a7c3f;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+}
+
+.seccion-info p {
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+blockquote {
+    border-left: 4px solid #4a7c3f;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background-color: #e8f5e3;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #2d5a27;
+}
+
+code {
+    background-color: #e8f5e3;   /* Fondo verde muy claro */
+    color: #2d7a2d;              /* Verde oscuro legible sobre fondo claro */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.95em;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #4a7c3f;
+    margin: 20px 0;
+}
+
+/* ---- Galería estilo Pinterest ---- */
+.galeria {
+    column-count: 3;          /* 3 columnas estilo Pinterest */
+    column-gap: 12px;
+    margin-top: 20px;
+}
+
+/* Cada tarjeta de imagen */
+.galeria .tarjeta {
+    break-inside: avoid;      /* Que la tarjeta no se parta entre columnas */
+    margin-bottom: 12px;
+    background-color: #f0f0f0;   /* Gris claro */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #c0c0c0;   /* Borde gris suave */
+    transition: transform 0.3s, box-shadow 0.3s;  /* Animación al hover */
+}
+
+.galeria .tarjeta:hover {
+    transform: scale(1.03);   /* Se agranda un poco al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(74, 124, 63, 0.5);
+}
+
+.galeria .tarjeta img {
+    width: 100%;
+    display: block;
+}
+
+.galeria .tarjeta .pie {
+    padding: 8px 10px;
+    font-size: 0.8em;
+    color: #a8d8a8;
+}
+
+/* ---- Sección de videos ---- */
+.seccion-videos {
+    margin-top: 30px;
+}
+
+/* Contenedor flex: coloca los dos videos lado a lado y centrados */
+.videos-contenedor {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;   /* Si la pantalla es pequeña, se apilan */
+    margin-top: 15px;
+}
+
+.video-item {
+    background-color: #f4f9f2;   /* Verde muy claro */
+    border: 2px solid #4a7c3f;
+    border-radius: 8px;
+    padding: 10px;
+    width: 360px;        /* Tamaño similar al de la imagen más grande */
+    flex-shrink: 0;
+}
+
+.video-item video {
+    width: 100%;         /* El video llena su tarjeta */
+    border-radius: 6px;
+    display: block;
+}
+
+/* ---- Reproductor de música ---- */
+.seccion-musica {
+    background-color: #f4f9f2;   /* Verde muy claro */
+    border: 2px solid #4a7c3f;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info-cancion {
+    margin: 10px 0;
+}
+
+.info-cancion p {
+    font-size: 0.9em;
+    color: #3a6b30;   /* Verde oscuro visible sobre fondo claro */
+    margin: 4px 0;
+}
+
+.controles-musica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+/* Botones de control del reproductor */
+.btn-musica {
+    background-color: #4a7c3f;
+    color: white;
+    border: none;
+    border-radius: 50%;      /* Botones redondos */
+    width: 45px;
+    height: 45px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-musica:hover {
+    background-color: #7bc67e;
+    transform: scale(1.1);
+}
+
+.btn-musica:active {
+    transform: scale(0.95);  /* Se "presiona" visualmente */
+}
+
+/* El botón de pausa es más grande (es el principal) */
+.btn-play {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4em;
+    background-color: #2d8a3e;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+/* ---- Sección del Canvas ---- */
+.seccion-canvas {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#miCanvas {
+    border: 3px solid #4a7c3f;
+    border-radius: 8px;
+    cursor: pointer;          /* Cursor de manita para indicar que se puede hacer clic */
+    display: block;
+    margin: 0 auto;
+    background-color: #87ceeb; /* Cielo azul de fondo por si el JS tarda */
+}
+
+.instruccion-canvas {
+    font-size: 0.85em;
+    color: #3a6b30;   /* Verde oscuro */
+    margin-top: 8px;
+}
+
+/* ---- Pie de página ---- */
+footer {
+    background-color: #2d5a27;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: #a8d8a8;
+    font-size: 0.85em;
+}
+
+/* ---- Responsive: en pantallas pequeñas, 1 columna ---- */
+@media (max-width: 700px) {
+    .galeria {
+        column-count: 1;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .galeria {
+        column-count: 2;
+    }
+}

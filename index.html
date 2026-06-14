@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Multimedia de Minecraft</title>
+
+    <!-- Enlazamos nuestro archivo de estilos externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL-->
+    <header>
+        <h1>Galería de Minecraft</h1>
+        <p>Una colección de imágenes, videos y música</p>
+    </header>
+
+    <!-- Barra de navegación para moverse entre secciones -->
+    <nav>
+        <a href="#galeria">📷 Galería</a>
+        <a href="#videos">🎬 Videos</a>
+        <a href="#musica">🎵 Música</a>
+        <a href="#canvas">🎨 Canvas</a>
+    </nav>
+
+    <!-- Contenedor principal de todo el contenido -->
+    <main>
+
+        <!-- SECCION 1: INFORMACIÓN Y FORMATOS DE TEXTO -->
+        <section class="seccion-info">
+
+            <h2>¿Qué es Minecraft?</h2>
+
+            <!-- Etiqueta <p> párrafo normal -->
+            <p>
+                <strong>Minecraft</strong> es un videojuego de construcción y aventura
+                creado por <em>Markus "Notch" Persson</em> en el año 2009.
+                Es uno de los juegos más vendidos de la historia con más de
+                <mark>238 millones de copias</mark> vendidas en todo el mundo.
+            </p>
+
+            <!-- Etiqueta <hr> para una línea separadora horizontal -->
+            <hr>
+
+            <p>
+                El juego está disponible en su versión Java Edition
+                <!-- Etiqueta <sup> para texto en superíndice -->
+                26.2<sup>®</sup> y Bedrock Edition.
+                El mundo tiene un límite de construcción de
+                <!-- Etiqueta <sub> para texto en subíndice -->
+                Y<sub>320</sub> con Y<sub>-64</sub> bloques bajo el 0.
+            </p>
+
+            <p>
+                En el juego hay varios comandos que puedes usar como, por ejemplo:
+                <!-- Etiqueta <code> para mostrar código o comandos -->
+                <code>/gamemode creative</code> y tener acceso ilimitado a todos los bloques e items.
+            </p>
+
+            <p>
+                <!-- Etiqueta <u> para texto subrayado -->
+                <u>Datos curiosos:</u>
+                <!-- Etiqueta <small> para texto más pequeño -->
+                <small>(Fuente: Minecraft Wiki, 2026)</small>
+            </p>
+
+            <!-- Etiqueta <br> para un salto de línea manual -->
+            El creeper fue creado por un error de programación cuando se quería crar un cerdo.<br>
+            El nether fue añadido en la versión Alpha 1.2.0.<br>
+            La música original fue compuesta por <strong>C418</strong>.
+
+        </section>
+
+
+        <!-- SECCIÓN 2: GALERÍA DE IMÁGENES -->
+        <section id="galeria">
+            <h2>📷 Galería de Imágenes</h2>
+            <p>Capturas y arte del universo de Minecraft.</p>
+
+            <!-- Contenedor de la galería -->
+            <div class="galeria">
+
+                <div class="tarjeta">
+                    <img src="img/120ff31639428990e7a34d0d7670999d.jpg" alt="Escena de Minecraft con bloques"
+                        width="100%" height="auto">
+                </div>
+
+                <div class="tarjeta">
+                    <img src="img/4f06b440bfb0cece1377e63486015931.jpg" alt="Construcción en Minecraft" width="100%">
+                </div>
+
+                <div class="tarjeta">
+                    <img src="img/7b3aef6d612f1917b178dd7ddadb7f9b.jpg" alt="Paisaje del bioma de Minecraft"
+                        width="100%">
+                </div>
+
+                <div class="tarjeta">
+                    <img src="img/7b7cdc318dbfad977005687ecda5fde2.jpg" alt="Arte de Minecraft" width="100%">
+                </div>
+
+                <div class="tarjeta">
+                    <img src="img/98be30e7835796adda853671b23d533a.jpg" alt="Personajes de Minecraft" width="100%">
+                </div>
+
+                <div class="tarjeta">
+                    <img src="img/ed73bc80165d17e4ae37ecfa0594aec9.jpg" alt="Aventura en Minecraft" width="100%">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 3: VIDEOS -->
+        <section id="videos" class="seccion-videos">
+            <h2>🎬 Videos de Minecraft</h2>
+            <p>Videos de parkour en el juego</p>
+
+            <!-- Contenedor flex -->
+            <div class="videos-contenedor">
+
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <!--  contrlols para tener controles del video -->
+                    <video controls>
+                        <source src="vid/vid1.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <video controls>
+                        <source src="vid/vid2.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECCIÓN 4: MÚSICA  -->
+        <section id="musica" class="seccion-musica">
+            <h2>🎵 Música de Minecraft</h2>
+
+            <div class="info-cancion">
+                <p><strong>♫ C418 — Sweden</strong></p>
+                <p><small>Minecraft Volume Alpha (2011)</small></p>
+            </div>
+
+            <!-- Botones del reproductor -->
+            <div class="controles-musica">
+
+                <!-- Botón anterior -->
+                <button class="btn-musica" title="Canción anterior">⏮</button>
+
+                <!-- Botón play/pausa -->
+                <button class="btn-musica btn-play" id="btnPlay" onclick="togglePlay()"
+                    title="Reproducir / Pausar">▶</button>
+
+                <!-- Botón siguiente -->
+                <button class="btn-musica" title="Siguiente canción">⏭</button>
+
+            </div>
+
+            <!-- Etiqueta <audio> con controles nativos del navegador -->
+            <audio controls id="audioMinecraft">
+                <source src="mp3/C418  - Sweden - Minecraft Volume Alpha.mp3" type="audio/mpeg">
+            </audio>
+
+        </section>
+
+
+        <!-- SECCIÓN 5: CANVAS CON JAVASCRIPT -->
+        <section id="canvas" class="seccion-canvas">
+            <h2>Canvas Interactivo</h2>
+            <p>Haz clic en el Creeper para hacerlo explotar!</p>
+
+            <!-- El canvas donde se dibuja todo con JS -->
+            <!-- Le damos un tamaño visible con width y height -->
+            <canvas id="miCanvas" width="500" height="280"></canvas>
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>🎮 Galería Multimedia de Minecraft</p>
+        <p><small>Minecraft® es propiedad de Mojang Studios / Microsoft</small></p>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
