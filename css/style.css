@@ -1,21 +1,17 @@
-/* Importamos una fuente estilo pixel art de Google Fonts */
+/* Fuente estilo pixel art de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Segoe+UI:wght@400;700&display=swap');
 
 /* ---- Estilos generales del body ---- */
 body {
     background-color: #ffffff;
-    /* Fondo blanco */
     color: #222222;
-    /* Texto oscuro para que se lea bien */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* ---- Encabezado principal ---- */
 header {
     background-color: #4a7c3f;
-    /* Verde Minecraft */
     text-align: center;
     padding: 30px 20px;
     border-bottom: 4px solid #2d5a27;
@@ -23,11 +19,9 @@ header {
 
 header h1 {
     font-family: 'Press Start 2P', cursive;
-    /* Fuente pixel art */
     font-size: 2em;
     color: #ffffff;
     text-shadow: 3px 3px 0px #2d5a27;
-    /* Sombra estilo pixel */
     margin: 0 0 10px 0;
 }
 
@@ -51,14 +45,12 @@ nav a {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.6em;
     transition: color 0.3s;
-    /* Pequeña animación al pasar el mouse */
 }
 
 nav a:hover {
     color: #ffffff;
 }
 
-/* ---- Contenedor principal ---- */
 main {
     max-width: 1100px;
     margin: 0 auto;
@@ -70,7 +62,6 @@ h2 {
     font-family: 'Press Start 2P', cursive;
     font-size: 1em;
     color: #3a6b30;
-    /* Verde más oscuro, visible sobre blanco */
     border-left: 5px solid #4a7c3f;
     padding-left: 12px;
     margin-top: 40px;
@@ -78,7 +69,6 @@ h2 {
 
 h3 {
     color: #3a6b30;
-    /* Verde oscuro */
     font-size: 1em;
     margin-bottom: 5px;
 }
@@ -86,7 +76,6 @@ h3 {
 /* ---- Sección de información / texto ---- */
 .seccion-info {
     background-color: #f4f9f2;
-    /* Verde muy claro para destacar la sección */
     border: 2px solid #4a7c3f;
     border-radius: 8px;
     padding: 20px 25px;
@@ -110,9 +99,7 @@ blockquote {
 
 code {
     background-color: #e8f5e3;
-    /* Fondo verde muy claro */
     color: #2d7a2d;
-    /* Verde oscuro legible sobre fondo claro */
     padding: 2px 6px;
     border-radius: 4px;
     font-family: monospace;
@@ -125,7 +112,7 @@ hr {
     margin: 20px 0;
 }
 
-/* Galería estilo Pinterest */
+
 .galeria {
     column-count: 3;
     column-gap: 12px;
@@ -138,18 +125,14 @@ hr {
     /* Que la tarjeta no se parta entre columnas */
     margin-bottom: 12px;
     background-color: #f0f0f0;
-    /* Gris claro */
     border-radius: 8px;
     overflow: hidden;
     border: 2px solid #c0c0c0;
-    /* Borde gris suave */
     transition: transform 0.3s, box-shadow 0.3s;
-    /* Animación al hover */
 }
 
 .galeria .tarjeta:hover {
     transform: scale(1.03);
-    /* Se agranda un poco al pasar el mouse */
     box-shadow: 0 6px 20px rgba(74, 124, 63, 0.5);
 }
 
@@ -169,7 +152,7 @@ hr {
     margin-top: 30px;
 }
 
-/* Contenedor flex: coloca los dos videos lado a lado y centrados */
+/* Contenedor flex, coloca los dos videos lado a lado y centrados */
 .videos-contenedor {
     display: flex;
     gap: 16px;
@@ -181,18 +164,15 @@ hr {
 
 .video-item {
     background-color: #f4f9f2;
-    /* Verde muy claro */
     border: 2px solid #4a7c3f;
     border-radius: 8px;
     padding: 10px;
     width: 360px;
-    /* Tamaño similar al de la imagen más grande */
     flex-shrink: 0;
 }
 
 .video-item video {
     width: 100%;
-    /* El video llena su tarjeta */
     border-radius: 6px;
     display: block;
 }
@@ -200,7 +180,6 @@ hr {
 /*  Reproductor de música */
 .seccion-musica {
     background-color: #f4f9f2;
-    /* Verde muy claro */
     border: 2px solid #4a7c3f;
     border-radius: 10px;
     padding: 20px;
@@ -215,7 +194,6 @@ hr {
 .info-cancion p {
     font-size: 0.9em;
     color: #3a6b30;
-    /* Verde oscuro visible sobre fondo claro */
     margin: 4px 0;
 }
 
@@ -249,7 +227,7 @@ hr {
     transform: scale(0.95);
 }
 
-/* El botón de pausa es más grande */
+/* El botón de pausa es un chin más grande */
 .btn-play {
     width: 55px;
     height: 55px;
@@ -281,7 +259,6 @@ audio {
 .instruccion-canvas {
     font-size: 0.85em;
     color: #3a6b30;
-    /* Verde oscuro */
     margin-top: 8px;
 }
 

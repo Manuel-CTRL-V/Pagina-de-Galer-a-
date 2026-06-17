@@ -173,7 +173,6 @@ function dibujarCreeper() {
                     tamPixel
                 );
             }
-            // Si es 0, no dibujamos nada (transparente)
         }
     }
 }
